@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/home/small_text.dart';
 import 'package:food_delivery/home/text.dart';
 import 'package:food_delivery/utils/colors.dart';
+import 'package:food_delivery/utils/dimensions.dart';
 
 import '../home_body/slider_pro.dart';
 
@@ -24,8 +25,8 @@ class _homepageState extends State<homepage> {
         children: [
           Container(
             child: Container(
-              margin: EdgeInsets.only(top: 30, bottom: 15),
-              padding: EdgeInsets.only(left: 20, right: 20),
+              margin: EdgeInsets.only(top: Dimensions.height45, bottom: Dimensions.height15),
+              padding: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -45,14 +46,14 @@ class _homepageState extends State<homepage> {
                   ),
                   Center(
                     child: Container(
-                      width: 45,
-                      height: 45,
+                      width: Dimensions.height45,
+                      height: Dimensions.height45,
                       child: Icon(
                         Icons.search,
-                        color: Colors.white,
+                        color: Colors.white,size: 24,
                       ),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(Dimensions.radius15),
                         color: AppColors.mainColor,
                       ),
                     ),
