@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/home/small_text.dart';
-import 'package:food_delivery/home/text.dart';
+import 'package:food_delivery/home_page/slider_pro.dart';
+import 'package:food_delivery/top_secation/small_text.dart';
+import 'package:food_delivery/top_secation/text.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/utils/dimensions.dart';
-
-import '../home_body/slider_pro.dart';
 
 
 // ignore: camel_case_types
@@ -50,7 +49,7 @@ class _homepageState extends State<homepage> {
                       height: Dimensions.height45,
                       child: Icon(
                         Icons.search,
-                        color: Colors.white,size: 24,
+                        color: Colors.white,size: Dimensions.iconSize24,
                       ),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(Dimensions.radius15),
@@ -62,7 +61,11 @@ class _homepageState extends State<homepage> {
               ),
             ),
           ),
-          FoodPageBody(),
+          Expanded(
+            child: SingleChildScrollView(
+              child: FoodPageBody(),
+              ),
+              ),
         ],
       ),
     );

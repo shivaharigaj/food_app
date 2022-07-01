@@ -11,6 +11,7 @@ class SmallText extends StatelessWidget {
     required this.text,
     this.size = 12,
     this.height = 1.2,
+    // required TextStyle Style,
   }) : super(key: key);
 
   @override

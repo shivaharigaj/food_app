@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:food_delivery/home/small_text.dart';
+import 'package:food_delivery/utils/dimensions.dart';
+
+import '../top_secation/small_text.dart';
 
 class IconAndTextWidget extends StatelessWidget {
   final IconData icon;
@@ -18,8 +20,8 @@ class IconAndTextWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
              children: [
-              Icon(icon, color: iconColor,),
-              
+              Icon(icon, color: iconColor,size:Dimensions.iconSize24),
+              SizedBox(width: Dimensions.width5,),
               SmallText(text: text,),
              ],
     );
