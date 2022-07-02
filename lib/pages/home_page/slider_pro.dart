@@ -1,12 +1,11 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/home_page/Icon_Text_Widget.dart';
+import 'package:food_delivery/pages/home_page/Icon_Text_Widget.dart';
 import 'package:food_delivery/top_secation/small_text.dart';
 import 'package:food_delivery/top_secation/text.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/utils/dimensions.dart';
-
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({Key? key}) : super(key: key);
@@ -59,112 +58,109 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
         ),
       ),
-    SizedBox(height: Dimensions.height30,),
-    Container(
-      margin: EdgeInsets.only(left: Dimensions.height30,),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.end  ,
-       children: [
-        BigText(text: "Popular"),
-        SizedBox(width:Dimensions.width10),
-        Container(
-          margin: const EdgeInsets.only(bottom: 3),
-          child:SmallText(text: ".")),
-                SizedBox(width:Dimensions.width10),
-                Container(
-                   margin: const EdgeInsets.only(bottom: 2),
-                  child: SmallText(text: "Food Padding"),
-                ),
-               
-
-       ], 
+      SizedBox(
+        height: Dimensions.height30,
       ),
-    ),
-    Container(
-      height: 900,
-      child: ListView.builder(
-        physics: NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        itemCount: 12,
-        itemBuilder: (context, index) {
-        return Container(
-          
-          margin: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, bottom: Dimensions.height10),
-          child: Row(
-            
-            children: [
-              Container(
-                height: 120,
-                width: 120,
-                decoration: BoxDecoration(
-                  
-                  borderRadius: BorderRadius.circular(Dimensions.radius20),
-                  color: Colors.white38,
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage("assets/image/food0.png",))
-                ),
-              ),
-            //Text Container
-            Expanded(
-              child: Container(
-                height: 100,
-                // width: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                   topRight: Radius.circular(Dimensions.radius20),
-                   bottomRight: Radius.circular(Dimensions.radius20),
-            
+      Container(
+        margin: EdgeInsets.only(
+          left: Dimensions.height30,
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            BigText(text: "Popular"),
+            SizedBox(width: Dimensions.width10),
+            Container(
+                margin: const EdgeInsets.only(bottom: 3),
+                child: SmallText(text: ".")),
+            SizedBox(width: Dimensions.width10),
+            Container(
+              margin: const EdgeInsets.only(bottom: 2),
+              child: SmallText(text: "Food Padding"),
+            ),
+          ],
+        ),
+      ),
+      SizedBox(height: Dimensions.height45),
+      ListView.builder(
+          physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return Container(
+              margin: EdgeInsets.only(
+                  left: Dimensions.width20,
+                  right: Dimensions.width20,
+                  bottom: Dimensions.height10),
+              child: Row(
+                children: [
+                  Container(
+                    height: Dimensions.ListViewImgSize,
+                    width: Dimensions.ListViewImgSize,
+                    decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius20),
+                        color: Colors.white38,
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage(
+                              "assets/image/food0.png",
+                            ))),
                   ),
-                  color: Colors.white,
-                  
-                ),
-                child: Padding(
-                  padding: EdgeInsets.only(left: Dimensions.width10,right: Dimensions.width10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      BigText(text: "Nutritious fruit meal in China"),
-                      SizedBox(height: Dimensions.height10,),
-                      SmallText(text: "With chinese charecteristics"),
-                      SizedBox(
-                        height: Dimensions.height20,
+                  //Text Container
+                  Expanded(
+                    child: Container(
+                      height: Dimensions.ListViewTextContSize,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(Dimensions.radius20),
+                          bottomRight: Radius.circular(Dimensions.radius20),
+                        ),
+                        color: Colors.white,
                       ),
-                      Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconAndTextWidget(
-                            icon: Icons.circle_sharp,
-                            text: "Normal",
-                            iconColor: AppColors.iconColor1),
-                        IconAndTextWidget(
-                            icon: Icons.location_on_outlined,
-                            text: "1.7 Km",
-                            iconColor: AppColors.mainColor),
-                        IconAndTextWidget(
-                            icon: Icons.access_time,
-                            text: "32 min",
-                            iconColor: AppColors.iconColor2),
-                      ],
-
-                    )
-                                  
-                    ],
-                  ),
-                  ),
-              
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            left: Dimensions.width10,
+                            right: Dimensions.width10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            BigText(text: "Nutritious fruit meal in China"),
+                            SizedBox(
+                              height: Dimensions.height10,
+                            ),
+                            SmallText(text: "With chinese charecteristics"),
+                            SizedBox(
+                              height: Dimensions.height20,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                IconAndTextWidget(
+                                    icon: Icons.circle_sharp,
+                                    text: "Normal",
+                                    iconColor: AppColors.iconColor1),
+                                IconAndTextWidget(
+                                    icon: Icons.location_on_outlined,
+                                    text: "1.7 Km",
+                                    iconColor: AppColors.mainColor),
+                                IconAndTextWidget(
+                                    icon: Icons.access_time,
+                                    text: "32 min",
+                                    iconColor: AppColors.iconColor2),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
-             
-            )
-            ],
-          ),
-        );
-      }
-      ),
-    )
-    ]
-    );
+            );
+          }),
+    ]);
   }
 
   Widget _buildPageItem(int index) {
@@ -198,7 +194,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         children: [
           Container(
             height: Dimensions.pageViewContainer,
-            margin: EdgeInsets.only(left: Dimensions.width10, right: Dimensions.width10),
+            margin: EdgeInsets.only(
+                left: Dimensions.width10, right: Dimensions.width10),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius30),
                 image: DecorationImage(
@@ -228,9 +225,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   ]),
               child: Container(
                 padding: EdgeInsets.only(
-                    top: Dimensions.height15,
-                    left: 15,
-                    right:15),
+                    top: Dimensions.height15, left: 15, right: 15),
                 child: Column(
                   children: [
                     Row(
