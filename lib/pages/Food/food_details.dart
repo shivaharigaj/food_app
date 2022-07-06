@@ -4,11 +4,13 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:food_delivery/pages/Food/Food_widgets/app_column.dart';
 import 'package:food_delivery/pages/Food/Food_widgets/app_icon.dart';
+import 'package:food_delivery/pages/Food/Food_widgets/exandable_text_widget.dart';
 import 'package:food_delivery/pages/home_page/Icon_Text_Widget.dart';
 import 'package:food_delivery/top_secation/small_text.dart';
 import 'package:food_delivery/top_secation/text.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/utils/dimensions.dart';
+
 
 class FoodDetail extends StatelessWidget {
   const FoodDetail({Key? key}) : super(key: key);
@@ -19,6 +21,7 @@ class FoodDetail extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
+        // background image
         Positioned(
           left: 0,
           right: 0,
@@ -31,6 +34,7 @@ class FoodDetail extends StatelessWidget {
                     image: AssetImage("assets/image/food0.png"))),
           ),
         ),
+        // icon widget
         Positioned(
             top: Dimensions.height45,
             left: Dimensions.width20,
@@ -42,6 +46,7 @@ class FoodDetail extends StatelessWidget {
                 AppIcon(icon: Icons.shopping_cart_outlined)
               ],
             )),
+        // introduction of food
         Positioned(
           left: 0,
           right: 0,
@@ -64,8 +69,10 @@ class FoodDetail extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AppColumn(text: "Chinese Side",),
-                SizedBox(height: Dimensions.height20,),
+                SizedBox(height: Dimensions.height30,),
                 BigText(text: "Interoduce"),
+                SizedBox(height: Dimensions.height15,),
+                Expanded(child: SingleChildScrollView(child: ExandableTextWidget(text: "Chinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese SideChinese Side",)))
 
               ],
             ),
