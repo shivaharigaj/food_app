@@ -51,7 +51,7 @@ class FoodDetail extends StatelessWidget {
           left: 0,
           right: 0,
           bottom: 0,
-          top: Dimensions.FoodDetailImgSize-20,
+          top: Dimensions.FoodDetailImgSize,
           child: Container(
             padding: EdgeInsets.only(
               left: Dimensions.width20,
