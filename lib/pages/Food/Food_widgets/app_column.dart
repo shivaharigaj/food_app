@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:food_delivery/pages/home_page/Icon_Text_Widget.dart';
+import 'package:food_delivery/pages/home_page/Icon_Text_Widget.dart';
 import 'package:food_delivery/top_secation/small_text.dart';
 import 'package:food_delivery/top_secation/text.dart';
 import 'package:food_delivery/utils/colors.dart';

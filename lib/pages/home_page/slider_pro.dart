@@ -1,11 +1,15 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery/controllers/popular_product_controller.dart';
 import 'package:food_delivery/pages/home_page/Icon_Text_Widget.dart';
 import 'package:food_delivery/top_secation/small_text.dart';
 import 'package:food_delivery/top_secation/text.dart';
+import 'package:food_delivery/utils/app_conastant.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/utils/dimensions.dart';
+import 'package:get/get.dart';
+
 
 class FoodPageBody extends StatefulWidget {
   const FoodPageBody({Key? key}) : super(key: key);
@@ -37,19 +41,25 @@ class _FoodPageBodyState extends State<FoodPageBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Container(
+    return Column(
+      children: [
+        // slider secation
+        GetBuilder<PopularProductController>(builder: (popularProducts){
+              return Container(
         // color: Colors.red,
         height: Dimensions.pageView,
         child: PageView.builder(
             controller: pageController,
-            itemCount: 5,
+            itemCount: popularProducts.popularProductList.length,
             itemBuilder: (context, position) {
-              return _buildPageItem(position);
+              return _buildPageItem(position, popularProducts.popularProductList[position]);
             }),
-      ),
-      new DotsIndicator(
-        dotsCount: 5,
+      );
+        }),
+      
+      GetBuilder<PopularProductController>(builder: (popularProducts){
+        return DotsIndicator(
+        dotsCount: popularProducts.popularProductList.isEmpty?1:popularProducts.popularProductList.length,
         position: _currPageValue,
         decorator: DotsDecorator(
           size: const Size.square(9.0),
@@ -57,7 +67,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           activeShape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
         ),
-      ),
+      );
+      }),
       SizedBox(
         height: Dimensions.height30,
       ),
@@ -163,8 +174,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     ]);
   }
 
-  Widget _buildPageItem(int index) {
-    Matrix4 matrix = new Matrix4.identity();
+  Widget _buildPageItem(int index, popularProduct) {
+    Matrix4 matrix = Matrix4.identity();
     if (index == _currPageValue.floor()) {
       var currScale = 1 - (_currPageValue - index) * (1 - _scaleFactor);
       var currTrans = _height * (1 - currScale) / 2;
@@ -199,7 +210,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius30),
                 image: DecorationImage(
-                  image: AssetImage("assets/image/food0.png"),
+                  image: NetworkImage(
+                   AppConstants.BASE_URL + "/uploads/" + popularProduct.img!
+                    ),
                   fit: BoxFit.cover,
                 )),
           ),

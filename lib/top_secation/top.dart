@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:food_delivery/pages/home_page/slider_pro.dart';
 import 'package:food_delivery/top_secation/small_text.dart';
